@@ -8,24 +8,60 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to right, #4a90e2, #9013fe);
-    color: #ffffff;
     text-align: center;
     padding: 60px 20px;
+    background: linear-gradient(
+        to right,
+        #333333 10%,
+        #444444 20%,
+        #555555 25%,
+        #666666 40%,
+        #333333 55%,
+        #222222 70%,
+        #111111 85%,
+        #000000 100%
+    );
+    background-size: 400%; /* Increased size for smoother animation */
+    animation: animateHeroGradient 8s ease-in-out infinite alternate; /* Reverses direction for seamless loop */
+    color: #ffffff;
 }
 
-/* Title Styling */
-.animated-title {
-    font-size: 4rem; /* Only size retained */
+/* Hero Gradient Animation */
+@keyframes animateHeroGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%; /* Smoothly moves the gradient across */
+    }
 }
 
-/* Reset Span Styling */
-.animated-title span {
-    all: unset; /* Resets all inherited or default styles */
-    font-size: inherit; /* Ensures size consistency */
+/* Camouflage Effect for WinAura Text */
+.camouflage-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: transparent;
+    background: linear-gradient(90deg, #FF4500, #FFA500, #FFFF00, #FFFFFF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 400%; /* Extended size for smooth transitions */
+    animation: moveCamouflage 6s ease-in-out infinite alternate; /* Reverses direction at the end */
 }
 
-/* Paragraph Styling */
+/* Keyframe Animation for Text */
+@keyframes moveCamouflage {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%; /* Moves to the opposite end without abrupt reset */
+    }
+}
+
+/* Subheading */
 .hero p {
     font-size: 1.5rem;
     margin-top: 20px;

@@ -1,85 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WinAura</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <!-- Import Montserrat font from Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Fixed buttons for extra links -->
     <div class="fixed-buttons">
-        <a href="https://t.me/yourbotusername" target="_blank" class="telegram-logo"></a>
-        <a href="#" class="x-logo"></a>
+      <a href="https://t.me/yourbotusername" target="_blank" class="telegram-logo">Telegram</a>
+      <a href="#" class="x-logo">X</a>
     </div>
 
+    <!-- Header with a hero banner -->
     <header>
-        <div class="hero">
-            <div class="camouflage-text">
-                <h1 class="winaura-title">WinAura</h1>
-            </div>
-            <p>Your trusted source for expert predictions</p>
-        </div>
+      <div class="hero">
+        <h1 class="winaura-title">WinAura</h1>
+        <p class="tagline">Your trusted source for expert predictions</p>
+      </div>
     </header>
 
+    <!-- Main content area -->
     <main>
-        <!-- Add a button to fetch data -->
-        <button id="fetch-data-btn">Get Today's Matchups</button>
-
-        <section class="matchup">
-            <h2>Featured Matchup</h2>
-            <div class="matchup-container">
-                <div class="team team-a">
-                    <img src="https://placehold.co/75x75" alt="Team A Logo">
-                    <p>Team A</p>
-                </div>
-                <div class="prediction">
-                    <p>70%</p>
-                </div>
-                <div class="team team-b">
-                    <img src="https://placehold.co/75x75" alt="Team B Logo">
-                    <p>Team B</p>
-                </div>
-            </div>
-            <p class="match-details">Match Date & Time: MM/DD HH:MM</p>
-        </section>
-
-        <section class="matchup">
-            <h2>Upcoming Matchup</h2>
-            <div class="matchup-container">
-                <div class="team team-a">
-                    <img src="https://placehold.co/75x75" alt="Team C Logo">
-                    <p>Team C</p>
-                </div>
-                <div class="prediction">
-                    <p>65%</p>
-                </div>
-                <div class="team team-b">
-                    <img src="https://placehold.co/75x75" alt="Team D Logo">
-                    <p>Team D</p>
-                </div>
-            </div>
-            <p class="match-details">Match Date & Time: MM/DD HH:MM</p>
-        </section>
-
-        <section class="matchup">
-            <h2>Another Matchup</h2>
-            <div class="matchup-container">
-                <div class="team team-a">
-                    <img src="https://placehold.co/75x75" alt="Team E Logo">
-                    <p>Team E</p>
-                </div>
-                <div class="prediction">
-                    <p>75%</p>
-                </div>
-                <div class="team team-b">
-                    <img src="https://placehold.co/75x75" alt="Team F Logo">
-                    <p>Team F</p>
-                </div>
-            </div>
-            <p class="match-details">Match Date & Time: MM/DD HH:MM</p>
-        </section>
+      <!-- Predictions will be rendered here dynamically -->
+      <div id="predictions-container" class="predictions-container">
+        <!-- Prediction cards will be added here by main.js -->
+      </div>
+      <div id="loading" class="loading hidden">Loading...</div>
     </main>
 
+    <!-- Buttons for workflow -->
+    <div class="buttons-container">
+      <button id="fetch-data-btn">Fetch Data</button>
+      <button id="compute-predictions-btn">Compute Predictions</button>
+    </div>
+
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
